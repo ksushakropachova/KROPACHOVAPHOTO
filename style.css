@@ -1,12 +1,6 @@
 html {
   scroll-behavior: smooth;
   overflow-y: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-  display: none;
 }
 
 body {
@@ -24,27 +18,260 @@ h1 {
   font-size: 1.5rem;
 }
 
-.logo {
-  padding: 3% 3% 0px 3%;
-  position: fixed;
+a {
+  text-decoration: none;
+  text-overflow: hidden;
+  font-size: 1px;
 }
 
-.logo img {
-  width: 8vh;
+@media screen and (max-width: 479px) {
+  body {
+    font-size: 10px;
+    line-height: 1.6;
+    color: white;
+    height: 100vh;
+  }
+  .logo {
+    padding: 2% 2% 0px 2%;
+    position: fixed;
+  }
+  h1 {
+    color: #f3f3f3;
+    font-size: 1rem;
+  }
+  .logo img {
+    width: 6vh;
+  }
+  .photoGrid {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 10%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (3vh)[60];
+        grid-template-columns: repeat(60, 3vh);
+    -ms-grid-rows: (3vh)[20];
+        grid-template-rows: repeat(20, 3vh);
+  }
+  .buttons {
+    padding: 0px 2% 2% 2%;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    bottom: 0%;
+    right: 0%;
+    word-spacing: 5px;
+  }
+  .link {
+    margin-right: 2.5vh;
+    text-decoration: none;
+  }
+  .link:hover {
+    color: #8a8a8a;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
 }
 
-.photoGrid {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  left: 30%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (3vh)[60];
-      grid-template-columns: repeat(60, 3vh);
-  -ms-grid-rows: (3vh)[20];
-      grid-template-rows: repeat(20, 3vh);
+@media screen and (min-width: 480px) {
+  body {
+    font-size: 10px;
+    line-height: 1.6;
+    color: white;
+    height: 100vh;
+  }
+  .logo {
+    padding: 2% 2% 0px 2%;
+    position: fixed;
+  }
+  h1 {
+    color: #f3f3f3;
+    font-size: 1rem;
+  }
+  .logo img {
+    width: 6vh;
+  }
+  .photoGrid {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 10%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (3vh)[60];
+        grid-template-columns: repeat(60, 3vh);
+    -ms-grid-rows: (3vh)[20];
+        grid-template-rows: repeat(20, 3vh);
+  }
+  .buttons {
+    padding: 0px 2% 2% 2%;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    bottom: 0%;
+    right: 0%;
+    word-spacing: 5px;
+  }
+  .link {
+    margin-right: 2.5vh;
+    text-decoration: none;
+  }
+  .link:hover {
+    color: #8a8a8a;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    padding: 3% 3% 0px 3%;
+    position: fixed;
+  }
+  .logo img {
+    width: 8vh;
+  }
+  .photoGrid {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 30%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (3vh)[60];
+        grid-template-columns: repeat(60, 3vh);
+    -ms-grid-rows: (3vh)[20];
+        grid-template-rows: repeat(20, 3vh);
+  }
+  .buttons {
+    padding: 0px 3% 3% 3%;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    bottom: 0%;
+    right: 0%;
+    word-spacing: 10px;
+  }
+  .link {
+    margin-right: 7vh;
+    text-decoration: none;
+  }
+  .link:hover {
+    color: #8a8a8a;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .logo {
+    padding: 3% 3% 0px 3%;
+    position: fixed;
+  }
+  .logo img {
+    width: 8vh;
+  }
+  .photoGrid {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 30%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (3vh)[60];
+        grid-template-columns: repeat(60, 3vh);
+    -ms-grid-rows: (3vh)[20];
+        grid-template-rows: repeat(20, 3vh);
+  }
+  .buttons {
+    padding: 0px 3% 3% 3%;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    bottom: 0%;
+    right: 0%;
+    word-spacing: 10px;
+  }
+  .link {
+    margin-right: 7vh;
+    text-decoration: none;
+  }
+  .link:hover {
+    color: #8a8a8a;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .logo {
+    padding: 3% 3% 0px 3%;
+    position: fixed;
+  }
+  .logo img {
+    width: 8vh;
+  }
+  .photoGrid {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 30%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (3vh)[60];
+        grid-template-columns: repeat(60, 3vh);
+    -ms-grid-rows: (3vh)[20];
+        grid-template-rows: repeat(20, 3vh);
+  }
+  .buttons {
+    padding: 0px 3% 3% 3%;
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    bottom: 0%;
+    right: 0%;
+    word-spacing: 10px;
+  }
+  .link {
+    margin-right: 7vh;
+    text-decoration: none;
+  }
+  .link:hover {
+    color: #8a8a8a;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
 }
 
 .photoGrid img {
@@ -405,37 +632,5 @@ h1 {
   width: 100vw;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.buttons {
-  padding: 0px 3% 3% 3%;
-  position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  bottom: 0%;
-  right: 0%;
-  word-spacing: 10px;
-}
-
-a {
-  text-decoration: none;
-  text-overflow: hidden;
-  font-size: 1px;
-}
-
-.link {
-  margin-right: 7vh;
-  text-decoration: none;
-}
-
-.link:hover {
-  color: #8a8a8a;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
 }
 /*# sourceMappingURL=style.css.map */
