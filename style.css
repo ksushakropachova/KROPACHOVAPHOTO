@@ -1,6 +1,12 @@
 html {
   scroll-behavior: smooth;
   overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -10,6 +16,9 @@ body {
   font-size: 10px;
   line-height: 1.6;
   color: white;
+}
+
+.container {
   height: 100vh;
 }
 
@@ -24,92 +33,117 @@ a {
   font-size: 1px;
 }
 
-@media screen and (max-width: 479px) {
-  body {
-    font-size: 10px;
-    line-height: 1.6;
-    color: white;
-    height: 100vh;
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.733);
+  margin-top: -1px;
+  -webkit-animation: fade 0.4s ease-in-out;
+          animation: fade 0.4s ease-in-out;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
   }
-  .logo {
-    padding: 2% 2% 0px 2%;
-    position: fixed;
-  }
-  h1 {
-    color: #f3f3f3;
-    font-size: 1rem;
-  }
-  .logo img {
-    width: 6vh;
-  }
-  .photoGrid {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    left: 10%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (3vh)[60];
-        grid-template-columns: repeat(60, 3vh);
-    -ms-grid-rows: (3vh)[20];
-        grid-template-rows: repeat(20, 3vh);
-  }
-  .buttons {
-    padding: 0px 2% 2% 2%;
-    position: fixed;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    bottom: 0%;
-    right: 0%;
-    word-spacing: 5px;
-  }
-  .link {
-    margin-right: 2.5vh;
-    text-decoration: none;
-  }
-  .link:hover {
-    color: #8a8a8a;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+  to {
+    opacity: 1;
   }
 }
 
-@media screen and (min-width: 480px) {
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal img {
+  height: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btnClose {
+  color: #f3f3f3;
+  font-size: 5rem;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+  position: absolute;
+  right: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10vw;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.btnClose:hover {
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
   body {
     font-size: 10px;
     line-height: 1.6;
     color: white;
+  }
+  .container {
     height: 100vh;
+    position: relative;
+  }
+  .content {
+    height: 100vh;
+    position: relative;
   }
   .logo {
-    padding: 2% 2% 0px 2%;
+    padding: 7% 7% 0px 7%;
     position: fixed;
   }
   h1 {
     color: #f3f3f3;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .logo img {
-    width: 6vh;
+    width: 8vh;
   }
   .photoGrid {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    left: 10%;
+    margin-left: 10%;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (3vh)[60];
         grid-template-columns: repeat(60, 3vh);
     -ms-grid-rows: (3vh)[20];
         grid-template-rows: repeat(20, 3vh);
+    width: 90vw;
+    height: 65vh;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .photoGrid::-webkit-scrollbar {
+    display: none;
   }
   .buttons {
     padding: 0px 2% 2% 2%;
@@ -133,32 +167,74 @@ a {
     color: #8a8a8a;
     -webkit-transition: 0.4s;
     transition: 0.4s;
+  }
+  .modal img {
+    width: 90vw;
+    max-height: 80vh;
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
+  }
+  .btnClose {
+    font-size: 5rem;
+    position: absolute;
+    top: 1%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 4vw;
   }
 }
 
 @media screen and (min-width: 768px) {
+  body {
+    font-size: 10px;
+    line-height: 1.6;
+    color: white;
+  }
+  .container {
+    height: 100vh;
+    position: relative;
+  }
+  .content {
+    height: 100vh;
+    position: relative;
+  }
   .logo {
-    padding: 3% 3% 0px 3%;
+    padding: 3%;
     position: fixed;
   }
+  h1 {
+    color: #f3f3f3;
+    font-size: 1.5rem;
+  }
   .logo img {
-    width: 8vh;
+    width: 8.5vh;
   }
   .photoGrid {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    left: 30%;
+    margin-left: 10%;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (3vh)[60];
         grid-template-columns: repeat(60, 3vh);
     -ms-grid-rows: (3vh)[20];
         grid-template-rows: repeat(20, 3vh);
+    width: 90vw;
+    height: 65vh;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    overflow: scroll;
+    scrollbar-color: #151515 #303030;
+    scrollbar-width: thin;
+  }
+  .photoGrid::-webkit-scrollbar-thumb {
+    outline: 1px solid;
+    border-radius: 20%;
   }
   .buttons {
-    padding: 0px 3% 3% 3%;
+    padding: 2%;
     position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -169,10 +245,9 @@ a {
             flex-direction: row;
     bottom: 0%;
     right: 0%;
-    word-spacing: 10px;
   }
   .link {
-    margin-right: 7vh;
+    margin-right: 2vh;
     text-decoration: none;
   }
   .link:hover {
@@ -180,77 +255,68 @@ a {
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-}
-
-@media screen and (min-width: 992px) {
-  .logo {
-    padding: 3% 3% 0px 3%;
-    position: fixed;
+  .modal img {
+    width: 90vw;
+    max-height: 80vh;
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
   }
-  .logo img {
-    width: 8vh;
-  }
-  .photoGrid {
+  .btnClose {
+    font-size: 5rem;
     position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    left: 30%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (3vh)[60];
-        grid-template-columns: repeat(60, 3vh);
-    -ms-grid-rows: (3vh)[20];
-        grid-template-rows: repeat(20, 3vh);
-  }
-  .buttons {
-    padding: 0px 3% 3% 3%;
-    position: fixed;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    bottom: 0%;
-    right: 0%;
-    word-spacing: 10px;
-  }
-  .link {
-    margin-right: 7vh;
-    text-decoration: none;
-  }
-  .link:hover {
-    color: #8a8a8a;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    top: 1%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 4vw;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  body {
+    font-size: 10px;
+    line-height: 1.6;
+    color: white;
+  }
+  .container {
+    height: 100vh;
+    position: relative;
+  }
+  .content {
+    height: 100vh;
+    position: relative;
+  }
   .logo {
-    padding: 3% 3% 0px 3%;
+    padding: 3% 3% 0vh 3%;
     position: fixed;
   }
+  h1 {
+    color: #f3f3f3;
+    font-size: 2rem;
+  }
   .logo img {
-    width: 8vh;
+    width: 7.5vh;
   }
   .photoGrid {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    left: 30%;
+    margin-left: 10%;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (3vh)[60];
         grid-template-columns: repeat(60, 3vh);
     -ms-grid-rows: (3vh)[20];
         grid-template-rows: repeat(20, 3vh);
+    width: 90vw;
+    height: 65vh;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    overflow: auto;
   }
   .buttons {
-    padding: 0px 3% 3% 3%;
+    padding: 2%;
+    padding-right: 6.2vw;
     position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -261,16 +327,6 @@ a {
             flex-direction: row;
     bottom: 0%;
     right: 0%;
-    word-spacing: 10px;
-  }
-  .link {
-    margin-right: 7vh;
-    text-decoration: none;
-  }
-  .link:hover {
-    color: #8a8a8a;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
   }
 }
 
@@ -632,5 +688,11 @@ a {
   width: 100vw;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.myImg {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
 }
 /*# sourceMappingURL=style.css.map */
